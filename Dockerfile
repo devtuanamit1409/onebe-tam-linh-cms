@@ -1,26 +1,23 @@
-# Chọn image Node.js 18-alpine làm base
-FROM node:18-alpine
+# Sử dụng hình ảnh Node chính thức với phiên bản 16
+FROM node:16
 
-# Cài đặt các gói cần thiết cho node-gyp
-RUN apk add --no-cache make gcc g++ python3
-
-# Tạo thư mục app trong container và đặt nó là working directory
+# Đặt thư mục làm việc là /app
 WORKDIR /app
 
-# Copy file package.json và package-lock.json vào working directory
+# Sao chép package.json và package-lock.json vào thư mục làm việc
 COPY package*.json ./
 
-# Cài đặt các dependency
+# Cài đặt các phụ thuộc
 RUN npm install
 
-# Copy toàn bộ mã nguồn vào container
+# Sao chép toàn bộ mã nguồn của dự án vào thư mục làm việc
 COPY . .
 
 # Xây dựng ứng dụng Strapi
 RUN npm run build
 
-# Expose cổng 1338
+# Mở cổng 1337 (mặc định của Strapi)
 EXPOSE 1338
 
-# Command để chạy ứng dụng
-CMD ["npx", "strapi", "start"]
+# Lệnh để khởi động Strapi
+CMD ["npm", "start"]
