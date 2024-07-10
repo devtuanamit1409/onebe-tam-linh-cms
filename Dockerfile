@@ -1,23 +1,23 @@
-# Sử dụng hình ảnh Node chính thức với phiên bản 18
-FROM node:18
+# Chọn image Node.js làm base
+FROM node:14-alpine
 
-# Đặt thư mục làm việc là /app
+# Tạo thư mục app trong container và đặt nó là working directory
 WORKDIR /app
 
-# Sao chép package.json và package-lock.json vào thư mục làm việc
+# Copy file package.json và package-lock.json vào working directory
 COPY package*.json ./
 
-# Cài đặt các phụ thuộc
+# Cài đặt các dependency
 RUN npm install
 
-# Sao chép toàn bộ mã nguồn của dự án vào thư mục làm việc
+# Copy toàn bộ mã nguồn vào container
 COPY . .
 
 # Xây dựng ứng dụng Strapi
 RUN npm run build
 
-# Mở cổng 1337 (mặc định của Strapi)
-EXPOSE 1337
+# Expose cổng 1338
+EXPOSE 1338
 
-# Lệnh để khởi động Strapi
+# Command để chạy ứng dụng
 CMD ["npm", "start"]
