@@ -1,5 +1,5 @@
-# Sử dụng hình ảnh Node.js chính thức với phiên bản 16
-FROM node:16
+# Sử dụng hình ảnh Node.js chính thức với phiên bản 14
+FROM node:14
 
 # Đặt thư mục làm việc là /app
 WORKDIR /app
@@ -7,8 +7,8 @@ WORKDIR /app
 # Sao chép package.json và package-lock.json vào thư mục làm việc
 COPY package*.json ./
 
-# Cài đặt các phụ thuộc
-RUN npm install --force
+# Cài đặt các phụ thuộc và kiểm tra lỗi
+RUN npm install && npm list
 
 # Sao chép toàn bộ mã nguồn của dự án vào thư mục làm việc
 COPY . .
