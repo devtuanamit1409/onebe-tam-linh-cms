@@ -2,7 +2,6 @@ version: "3"
 services:
   strapi:
     build: .
-    image: strapi:latest
     container_name: strapi
     volumes:
       - .:/srv/app

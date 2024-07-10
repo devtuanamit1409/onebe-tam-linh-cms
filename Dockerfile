@@ -1,5 +1,5 @@
-# Use the official Strapi image as a parent image
-FROM strapi/strapi
+# Use Node.js 16 as the base image
+FROM node:16
 
 # Set working directory
 WORKDIR /srv/app
@@ -17,4 +17,4 @@ RUN npm run build
 EXPOSE 1338
 
 # Start Strapi
-CMD ["strapi", "start"]
+CMD ["npm", "run", "start"]
