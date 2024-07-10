@@ -1,6 +1,9 @@
 # Chọn image Node.js 16-alpine làm base
 FROM node:16-alpine
 
+# Cài đặt các gói cần thiết cho node-gyp
+RUN apk add --no-cache make gcc g++ python3
+
 # Tạo thư mục app trong container và đặt nó là working directory
 WORKDIR /app
 
