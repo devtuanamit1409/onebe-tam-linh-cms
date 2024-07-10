@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_header_danh_muc_cons",
+  "info": {
+    "displayName": "Danh Mục Con",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

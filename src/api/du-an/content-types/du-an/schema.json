@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "du_ans",
+  "info": {
+    "singularName": "du-an",
+    "pluralName": "du-ans",
+    "displayName": "Dự án"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "main": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.sub-page"
+    }
+  }
+}

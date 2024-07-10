@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "cong_ty_thanh_viens",
+  "info": {
+    "singularName": "cong-ty-thanh-vien",
+    "pluralName": "cong-ty-thanh-viens",
+    "displayName": "Công ty thành viên",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.seo",
+      "required": true
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.banner"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "cardThanhVien": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.item-thanh-vien"
+    }
+  }
+}

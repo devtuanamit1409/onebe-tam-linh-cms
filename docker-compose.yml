@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  strapi:
+    build: .
+    ports:
+      - "1337:1337"
+    volumes:
+      - .:/app
+    environment:
+      DATABASE_CLIENT: sqlite
+      DATABASE_NAME: .tmp/data.db
+      HOST: 0.0.0.0
+      PORT: 1337
+      APP_KEYS: "vkjiZGGR07RNlEsqBVwCig==,dtedCOeZ9HUuYiT45KzTGA==,HCuNL7D0xFZrpkZqjDRn2A==,B1+kSK+LAOPusPVW+zay1w=="
+      API_TOKEN_SALT: "s6izGb2H4Ldx9s7GVbdrAw=="
+      ADMIN_JWT_SECRET: "3VcJ+gI/nX0g6QetPhaczA=="
+      JWT_SECRET: "QSq+peWhOeWcZJOYvGdQCw=="
+      API_KEY_TINY: "5uqva5k7lt0qxlfbezptki5oskz2grzrz3kbiwvsw0kr3vhu"
+      TRANSFER_TOKEN_SALT: "dZBtv1zHkjV/NShQ1GY8bg=="

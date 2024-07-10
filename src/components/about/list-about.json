@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_about_list_abouts",
+  "info": {
+    "displayName": "ListAbout"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    }
+  }
+}

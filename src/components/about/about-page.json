@@ -1,0 +1,66 @@
+{
+  "collectionName": "components_about_about_pages",
+  "info": {
+    "displayName": "about page",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.seo"
+    },
+    "contentFirst": {
+      "type": "string"
+    },
+    "videoAbout": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "boxAbout": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.box-gioi-thieu",
+      "max": 3,
+      "min": 3
+    },
+    "cacTongThau": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.list-about"
+    },
+    "cacDoiTacNuocNgoai": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.list-about"
+    },
+    "cacChuDauTuNuocNgoai": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.list-about"
+    },
+    "cacCongTyVaTapDoan": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.list-about"
+    },
+    "contentEnd": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

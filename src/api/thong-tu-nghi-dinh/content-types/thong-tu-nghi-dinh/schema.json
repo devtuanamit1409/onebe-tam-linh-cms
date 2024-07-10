@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "thong_tu_nghi_dinhs",
+  "info": {
+    "singularName": "thong-tu-nghi-dinh",
+    "pluralName": "thong-tu-nghi-dinhs",
+    "displayName": "Thông tư nghị định"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "main": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.sub-page"
+    }
+  }
+}

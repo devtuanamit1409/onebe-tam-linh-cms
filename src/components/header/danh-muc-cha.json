@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_header_danh_muc_chas",
+  "info": {
+    "displayName": "Danh Mục Cha",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "subCategory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.danh-muc-con"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

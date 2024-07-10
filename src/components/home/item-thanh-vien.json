@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_item_thanh_viens",
+  "info": {
+    "displayName": "Item Thành Viên",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "path": {
+      "type": "string"
+    }
+  }
+}

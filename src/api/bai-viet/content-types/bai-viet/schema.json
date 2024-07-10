@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bai_viets",
+  "info": {
+    "singularName": "bai-viet",
+    "pluralName": "bai-viets",
+    "displayName": "Bài viết",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.seo",
+      "required": true
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "unique": true,
+      "required": false
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
+    },
+    "bai_viet_tieu_diem": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
+    },
+    "danh_muc_bai_viets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::danh-muc-bai-viet.danh-muc-bai-viet"
+    },
+    "danh_muc_cons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::danh-muc-con.danh-muc-con"
+    },
+    "type": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Tin tức",
+        "Góc chuyên gia"
+      ]
+    }
+  }
+}

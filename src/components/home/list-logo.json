@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_list_logos",
+  "info": {
+    "displayName": "List logo",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "alt": {
+      "type": "string"
+    },
+    "urlImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

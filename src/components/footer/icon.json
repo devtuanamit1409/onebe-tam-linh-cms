@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_footer_icons",
+  "info": {
+    "displayName": "Icon",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "urlIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    }
+  }
+}

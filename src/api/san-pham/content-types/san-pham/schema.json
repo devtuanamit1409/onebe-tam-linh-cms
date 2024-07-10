@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "san_phams",
+  "info": {
+    "singularName": "san-pham",
+    "pluralName": "san-phams",
+    "displayName": "Sản phẩm",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "main": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.sub-page"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_expert_trang_cap_2s",
+  "info": {
+    "displayName": "Trang Cấp 2",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "subName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bai_viets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bai-viet.bai-viet"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "main": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.seo"
+    }
+  }
+}

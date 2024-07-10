@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_box_gioi_thieus",
+  "info": {
+    "displayName": "Box Giới Thiệu",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

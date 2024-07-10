@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_banners",
+  "info": {
+    "displayName": "Banner",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "urlImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt": {
+      "type": "string"
+    }
+  }
+}

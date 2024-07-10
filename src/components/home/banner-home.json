@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_home_banner_homes",
+  "info": {
+    "displayName": "Banner Home",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "urlImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "path": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

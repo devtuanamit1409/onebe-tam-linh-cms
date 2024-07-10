@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_slugs",
+  "info": {
+    "displayName": "Slug",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
