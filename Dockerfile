@@ -1,23 +1,20 @@
-# Sử dụng hình ảnh Node.js chính thức với phiên bản 20
-FROM node:20
+# Use the official Strapi image as a parent image
+FROM strapi/strapi
 
-# Đặt thư mục làm việc là /app
-WORKDIR /app
+# Set working directory
+WORKDIR /srv/app
 
-# Sao chép package.json và package-lock.json vào thư mục làm việc
-COPY package*.json ./
+# Copy project files to the docker image
+COPY ./ ./
 
-# Cài đặt các phụ thuộc và kiểm tra lỗi
+# Install dependencies
 RUN npm install
 
-# Sao chép toàn bộ mã nguồn của dự án vào thư mục làm việc
-COPY . .
-
-# Xây dựng ứng dụng Strapi
+# Build the Strapi project
 RUN npm run build
 
-# Mở cổng 1338
+# Expose the port Strapi runs on
 EXPOSE 1338
 
-# Lệnh để khởi động Strapi
-CMD ["npm", "start"]
+# Start Strapi
+CMD ["strapi", "start"]

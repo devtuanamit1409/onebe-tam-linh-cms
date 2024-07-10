@@ -1,10 +1,11 @@
+version: "3"
 services:
   strapi:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "1338:1338"
+    build: .
+    image: strapi:latest
+    container_name: strapi
+    volumes:
+      - .:/srv/app
     environment:
       HOST: 0.0.0.0
       PORT: 1338
@@ -15,5 +16,3 @@ services:
       DATABASE_CLIENT: sqlite
       DATABASE_FILENAME: .tmp/data.db
       JWT_SECRET: QSq+peWhOeWcZJOYvGdQCw==
-    volumes:
-      - .:/app
