@@ -1,5 +1,5 @@
-# Chọn image Node.js làm base
-FROM node:14-alpine
+# Chọn image Node.js 16-alpine làm base
+FROM node:16-alpine
 
 # Tạo thư mục app trong container và đặt nó là working directory
 WORKDIR /app
