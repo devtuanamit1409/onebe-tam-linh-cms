@@ -1,5 +1,5 @@
-# Chọn image Node.js 16-alpine làm base
-FROM node:16-alpine
+# Chọn image Node.js 18-alpine làm base
+FROM node:18-alpine
 
 # Cài đặt các gói cần thiết cho node-gyp
 RUN apk add --no-cache make gcc g++ python3
@@ -23,4 +23,4 @@ RUN npm run build
 EXPOSE 1338
 
 # Command để chạy ứng dụng
-CMD ["npm", "start"]
+CMD ["npx", "strapi", "start"]
