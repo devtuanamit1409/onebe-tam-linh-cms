@@ -1,5 +1,5 @@
 # Sử dụng hình ảnh Node.js chính thức với phiên bản 14
-FROM node:14
+FROM node:18
 
 # Đặt thư mục làm việc là /app
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Cài đặt các phụ thuộc và kiểm tra lỗi
-RUN npm install && npm list
+RUN npm install
 
 # Sao chép toàn bộ mã nguồn của dự án vào thư mục làm việc
 COPY . .
