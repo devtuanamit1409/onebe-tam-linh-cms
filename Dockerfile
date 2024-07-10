@@ -16,9 +16,6 @@ RUN npm install
 # Copy toàn bộ mã nguồn vào container
 COPY . .
 
-# Chuyển đến thư mục ứng dụng Strapi (nếu có)
-WORKDIR /app
-
 # Xây dựng ứng dụng Strapi
 RUN npm run build
 
