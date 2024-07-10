@@ -1,4 +1,4 @@
-# Sử dụng hình ảnh Node chính thức với phiên bản 16
+# Sử dụng hình ảnh Node.js chính thức với phiên bản 16
 FROM node:16
 
 # Đặt thư mục làm việc là /app

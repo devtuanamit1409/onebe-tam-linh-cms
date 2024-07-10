@@ -1,12 +1,16 @@
 {
   "name": "cms-nts",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
   "scripts": {
+    "build": "strapi build",
     "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build"
+    "start": "strapi start"
   },
   "dependencies": {
     "@sklinet/strapi-plugin-tinymce": "^1.0.9",
@@ -22,15 +26,11 @@
     "strapi-plugin-slugify": "^2.3.8",
     "styled-components": "5.3.3"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "8380e2a9-45a6-4e8d-b302-41a4006aa915"
-  },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "8380e2a9-45a6-4e8d-b302-41a4006aa915"
+  }
 }
