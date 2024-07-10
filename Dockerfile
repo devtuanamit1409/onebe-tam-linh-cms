@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Cài đặt các phụ thuộc
-RUN npm install
+RUN npm install --force
 
 # Sao chép toàn bộ mã nguồn của dự án vào thư mục làm việc
 COPY . .
