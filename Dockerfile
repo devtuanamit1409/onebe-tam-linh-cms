@@ -16,7 +16,7 @@ COPY . .
 # Xây dựng ứng dụng Strapi
 RUN npm run build
 
-# Mở cổng 1337 (mặc định của Strapi)
+# Mở cổng 1338
 EXPOSE 1338
 
 # Lệnh để khởi động Strapi
