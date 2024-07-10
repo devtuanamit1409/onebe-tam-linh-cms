@@ -1,5 +1,5 @@
 # Sử dụng hình ảnh Node.js chính thức với phiên bản 20
-FROM node:18
+FROM node:20
 
 # Đặt thư mục làm việc là /app
 WORKDIR /app
