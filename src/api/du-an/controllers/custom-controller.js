@@ -8,7 +8,7 @@ module.exports = createCoreController("api::du-an.du-an", ({ strapi }) => ({
   async findDuAn(ctx) {
     console.log("findDuAn called");
     try {
-      const { locale = "vi" } = ctx.query; // Lấy locale từ query params, mặc định là 'vi'
+      const { locale = "vi", limitDanhMuc = -1, limitBaiViet = 4 } = ctx.query; // Lấy locale, limitDanhMuc, limitBaiViet từ query params
 
       // Lấy thông tin Dự án theo locale
       const DuAn = await strapi.db.query("api::du-an.du-an").findOne({
@@ -17,15 +17,18 @@ module.exports = createCoreController("api::du-an.du-an", ({ strapi }) => ({
       });
 
       if (!DuAn) {
-        return ctx.send({ error: "No san pham found" });
+        return ctx.send({ error: "No du an found" });
       }
 
       // Lấy tất cả các danh mục con có category = "Dự án" và locale khớp
-      const danhMucCons = await strapi.db
+      const danhMucConsQuery = strapi.db
         .query("api::danh-muc-con.danh-muc-con")
         .findMany({
           where: { category: "Dự án", locale },
+          limit: limitDanhMuc !== -1 ? parseInt(limitDanhMuc, 10) : undefined,
         });
+
+      const danhMucCons = await danhMucConsQuery;
 
       // Lấy tất cả các bài viết và populate danh_muc_cons
       const baiViets = await strapi.db
@@ -45,7 +48,7 @@ module.exports = createCoreController("api::du-an.du-an", ({ strapi }) => ({
           const relatedBaiViets = baiViets
             .filter((bv) => bv.danh_muc_cons.some((dm) => dm.name === dmc.name))
             .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-            .slice(0, 4)
+            .slice(0, parseInt(limitBaiViet, 10)) // Sử dụng limitBaiViet từ query params
             .map((bv) => ({
               title: bv.title || "No title provided",
               slug: bv.slug || "No slug provided",
@@ -64,7 +67,7 @@ module.exports = createCoreController("api::du-an.du-an", ({ strapi }) => ({
 
       return ctx.send(response);
     } catch (err) {
-      console.error("Error fetching san pham:", err); // In ra chi tiết lỗi
+      console.error("Error fetching du an:", err); // In ra chi tiết lỗi
       ctx.send({
         error: "An error occurred while fetching data",
         details: err.message,

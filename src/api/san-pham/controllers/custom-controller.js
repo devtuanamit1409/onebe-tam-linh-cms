@@ -10,7 +10,11 @@ module.exports = createCoreController(
     async findSanPham(ctx) {
       console.log("findSanPham called");
       try {
-        const { locale = "vi" } = ctx.query; // Lấy locale từ query params, mặc định là 'vi'
+        const {
+          locale = "vi",
+          limitDanhMuc = -1,
+          limitBaiViet = 4,
+        } = ctx.query; // Lấy locale, limitDanhMuc, limitBaiViet từ query params
 
         // Lấy thông tin sản phẩm theo locale
         const sanPham = await strapi.db
@@ -25,11 +29,14 @@ module.exports = createCoreController(
         }
 
         // Lấy tất cả các danh mục con có category = "Sản phẩm" và locale khớp
-        const danhMucCons = await strapi.db
+        const danhMucConsQuery = strapi.db
           .query("api::danh-muc-con.danh-muc-con")
           .findMany({
             where: { category: "Sản phẩm", locale },
+            limit: limitDanhMuc !== -1 ? parseInt(limitDanhMuc, 10) : undefined,
           });
+
+        const danhMucCons = await danhMucConsQuery;
 
         // Lấy tất cả các bài viết và populate danh_muc_cons
         const baiViets = await strapi.db
@@ -51,7 +58,7 @@ module.exports = createCoreController(
                 bv.danh_muc_cons.some((dm) => dm.name === dmc.name)
               )
               .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-              .slice(0, 4)
+              .slice(0, parseInt(limitBaiViet, 10)) // Sử dụng limitBaiViet từ query params
               .map((bv) => ({
                 title: bv.title || "No title provided",
                 slug: bv.slug || "No slug provided",

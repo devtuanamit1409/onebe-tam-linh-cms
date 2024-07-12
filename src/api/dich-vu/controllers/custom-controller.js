@@ -7,7 +7,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::dich-vu.dich-vu", ({ strapi }) => ({
   async findDichVu(ctx) {
     try {
-      const { locale = "vi" } = ctx.query; // Lấy locale từ query params, mặc định là 'vi'
+      const { locale = "vi", limitDanhMuc = -1, limitBaiViet = 4 } = ctx.query; // Lấy locale, limitDanhMuc, limitBaiViet từ query params
 
       // Lấy thông tin sản phẩm theo locale
       const DichVu = await strapi.db.query("api::dich-vu.dich-vu").findOne({
@@ -16,15 +16,18 @@ module.exports = createCoreController("api::dich-vu.dich-vu", ({ strapi }) => ({
       });
 
       if (!DichVu) {
-        return ctx.send({ error: "No san pham found" });
+        return ctx.send({ error: "No dich vu found" });
       }
 
-      // Lấy tất cả các danh mục con có category = "Sản phẩm" và locale khớp
-      const danhMucCons = await strapi.db
+      // Lấy tất cả các danh mục con có category = "Dịch vụ" và locale khớp
+      const danhMucConsQuery = strapi.db
         .query("api::danh-muc-con.danh-muc-con")
         .findMany({
           where: { category: "Dịch vụ", locale },
+          limit: limitDanhMuc !== -1 ? parseInt(limitDanhMuc, 10) : undefined,
         });
+
+      const danhMucCons = await danhMucConsQuery;
 
       // Lấy tất cả các bài viết và populate danh_muc_cons
       const baiViets = await strapi.db
@@ -44,7 +47,7 @@ module.exports = createCoreController("api::dich-vu.dich-vu", ({ strapi }) => ({
           const relatedBaiViets = baiViets
             .filter((bv) => bv.danh_muc_cons.some((dm) => dm.name === dmc.name))
             .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-            .slice(0, 4)
+            .slice(0, parseInt(limitBaiViet, 10)) // Sử dụng limitBaiViet từ query params
             .map((bv) => ({
               title: bv.title || "No title provided",
               slug: bv.slug || "No slug provided",
@@ -63,7 +66,7 @@ module.exports = createCoreController("api::dich-vu.dich-vu", ({ strapi }) => ({
 
       return ctx.send(response);
     } catch (err) {
-      console.error("Error fetching san pham:", err); // In ra chi tiết lỗi
+      console.error("Error fetching dich vu:", err); // In ra chi tiết lỗi
       ctx.send({
         error: "An error occurred while fetching data",
         details: err.message,
