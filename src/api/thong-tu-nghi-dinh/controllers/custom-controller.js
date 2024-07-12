@@ -43,7 +43,11 @@ module.exports = createCoreController(
           .query("api::bai-viet.bai-viet")
           .findMany({
             where: { locale },
-            populate: { danh_muc_cons: true, danh_muc_bai_viets: true },
+            populate: {
+              danh_muc_cons: true,
+              danh_muc_bai_viets: true,
+              seo: true,
+            },
           });
 
         const response = {
@@ -64,6 +68,7 @@ module.exports = createCoreController(
               .map((bv) => ({
                 title: bv.title || "No title provided",
                 slug: bv.slug || "No slug provided",
+                description: bv.seo.description || "No description provided",
                 locale: bv.locale || "No locale provided",
               }));
 
