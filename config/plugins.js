@@ -8,19 +8,30 @@ module.exports = ({ env }) => ({
           language: "vi",
           height: 500,
           menubar: false,
-          extended_valid_elements: "span, img, small",
+          branding: false,
           forced_root_block: "",
           convert_urls: false,
           entity_encoding: "raw",
           plugins:
-            "advlist autolink lists link image charmap preview anchor \
-                    searchreplace visualblocks code fullscreen table emoticons nonbreaking \
-                    insertdatetime media table code help wordcount",
+            "advlist autolink lists link image charmap preview anchor " +
+            "searchreplace visualblocks code fullscreen table emoticons nonbreaking " +
+            "insertdatetime media table code help wordcount textcolor",
           toolbar:
-            "undo redo | styles | bold italic forecolor backcolor | \
-                    alignleft aligncenter alignright alignjustify | \
-                    media table emoticons visualblocks code|\
-                    nonbreaking bullist numlist outdent indent | removeformat | help",
+            "undo redo | styles | bold italic forecolor backcolor fontsizeinput  | " +
+            "alignleft aligncenter alignright alignjustify | " +
+            "media table emoticons visualblocks code | " +
+            "nonbreaking bullist numlist outdent indent | removeformat | help",
+          fontsize_formats: "8px 10px 12px 14px 16px 18px 24px 36px",
+          formats: {
+            bold: { inline: "strong" }, // sử dụng thẻ strong thay vì span
+            italic: { inline: "em" }, // sử dụng thẻ em thay vì span
+            underline: { inline: "u" }, // sử dụng thẻ u thay vì span
+            fontSize: {
+              inline: "span",
+              styles: { "font-size": "%value" },
+              remove: "all",
+            },
+          },
           style_formats: [
             {
               title: "Headings",
@@ -33,15 +44,11 @@ module.exports = ({ env }) => ({
                 { title: "h6", block: "h6" },
               ],
             },
-
             {
               title: "Text",
               items: [
                 { title: "Paragraph", block: "p" },
-                {
-                  title: "Paragraph with small letters",
-                  block: "small",
-                },
+                { title: "Paragraph with small letters", block: "small" },
               ],
             },
           ],
@@ -49,6 +56,7 @@ module.exports = ({ env }) => ({
       },
     },
   },
+
   slugify: {
     enabled: true,
     config: {
