@@ -17,7 +17,7 @@ module.exports = ({ env }) => ({
                     searchreplace visualblocks code fullscreen table emoticons nonbreaking \
                     insertdatetime media table code help wordcount",
           toolbar:
-            "undo redo | styles | bold italic forecolor backcolor | \
+            "undo redo | styles | bold italic forecolor backcolor fontsize | \
                     alignleft aligncenter alignright alignjustify | \
                     media table emoticons visualblocks code|\
                     nonbreaking bullist numlist outdent indent | removeformat | help",
