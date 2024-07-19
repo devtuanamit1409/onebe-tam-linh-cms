@@ -17,10 +17,21 @@ module.exports = ({ env }) => ({
             "searchreplace visualblocks code fullscreen table emoticons nonbreaking " +
             "insertdatetime media table code help wordcount textcolor",
           toolbar:
-            "undo redo | styles | bold italic forecolor backcolor fontsize | \
-                    alignleft aligncenter alignright alignjustify | \
-                    media table emoticons visualblocks code|\
-                    nonbreaking bullist numlist outdent indent | removeformat | help",
+            "undo redo | styles | bold italic forecolor backcolor fontsizeinput  | " +
+            "alignleft aligncenter alignright alignjustify | " +
+            "media table emoticons visualblocks code | " +
+            "nonbreaking bullist numlist outdent indent | removeformat | help",
+          fontsize_formats: "8px 10px 12px 14px 16px 18px 24px 36px",
+          formats: {
+            bold: { inline: "strong" }, // sử dụng thẻ strong thay vì span
+            italic: { inline: "em" }, // sử dụng thẻ em thay vì span
+            underline: { inline: "u" }, // sử dụng thẻ u thay vì span
+            fontSize: {
+              inline: "span",
+              styles: { "font-size": "%value" },
+              remove: "all",
+            },
+          },
           style_formats: [
             {
               title: "Headings",
