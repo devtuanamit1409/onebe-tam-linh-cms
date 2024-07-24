@@ -9,23 +9,9 @@ export interface AboutAboutPage extends Schema.Component {
   };
   attributes: {
     seo: Attribute.Component<'component.seo'>;
-    contentFirst: Attribute.String;
-    videoAbout: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    boxAbout: Attribute.Component<'about.box-gioi-thieu', true> &
-      Attribute.SetMinMax<
-        {
-          min: 3;
-          max: 3;
-        },
-        number
-      >;
-    cacTongThau: Attribute.Component<'about.list-about', true>;
-    cacDoiTacNuocNgoai: Attribute.Component<'about.list-about', true>;
-    cacChuDauTuNuocNgoai: Attribute.Component<'about.list-about', true>;
-    cacCongTyVaTapDoan: Attribute.Component<'about.list-about', true>;
-    contentEnd: Attribute.Text;
     name: Attribute.String;
     description: Attribute.Text;
+    content: Attribute.RichText;
   };
 }
 
@@ -48,6 +34,19 @@ export interface AboutListAbout extends Schema.Component {
   };
   attributes: {
     item: Attribute.String;
+  };
+}
+
+export interface ComponentBannerDetail extends Schema.Component {
+  collectionName: 'components_component_banner_details';
+  info: {
+    displayName: 'Banner_Detail';
+    icon: 'earth';
+  };
+  attributes: {
+    title: Attribute.String;
+    banner: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    path: Attribute.String;
   };
 }
 
@@ -212,11 +211,12 @@ export interface HomeBoxServices extends Schema.Component {
   info: {
     displayName: 'Box Services';
     icon: 'earth';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    path: Attribute.String;
+    path: Attribute.Text;
   };
 }
 
@@ -266,6 +266,7 @@ declare module '@strapi/types' {
       'about.about-page': AboutAboutPage;
       'about.box-gioi-thieu': AboutBoxGioiThieu;
       'about.list-about': AboutListAbout;
+      'component.banner-detail': ComponentBannerDetail;
       'component.banner': ComponentBanner;
       'component.link': ComponentLink;
       'component.seo': ComponentSeo;
