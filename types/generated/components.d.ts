@@ -217,6 +217,29 @@ export interface HomeBoxServices extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     path: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title_color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    description_color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    title_style: Attribute.Enumeration<
+      [
+        'In \u0111\u1EADm',
+        'In \u0111\u1EADm + nghi\u00EAng',
+        'Nghi\u00EAng',
+        'In \u0111\u1EADm + g\u1EA1ch ch\u00E2n',
+        'G\u1EA1ch ch\u00E2n + nghi\u00EAng'
+      ]
+    >;
+    description_style: Attribute.Enumeration<
+      [
+        'In \u0111\u1EADm',
+        'In \u0111\u1EADm + nghi\u00EAng',
+        'Nghi\u00EAng',
+        'In \u0111\u1EADm + g\u1EA1ch ch\u00E2n',
+        'G\u1EA1ch ch\u00E2n + nghi\u00EAng'
+      ]
+    >;
   };
 }
 

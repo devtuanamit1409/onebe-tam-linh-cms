@@ -15,6 +15,46 @@
     },
     "path": {
       "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title_color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "description_color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "title_style": {
+      "type": "enumeration",
+      "enum": [
+        "In đậm",
+        "In đậm + nghiêng",
+        "Nghiêng",
+        "In đậm + gạch chân",
+        "Gạch chân + nghiêng"
+      ]
+    },
+    "description_style": {
+      "type": "enumeration",
+      "enum": [
+        "In đậm",
+        "In đậm + nghiêng",
+        "Nghiêng",
+        "In đậm + gạch chân",
+        "Gạch chân + nghiêng"
+      ]
     }
   }
 }
