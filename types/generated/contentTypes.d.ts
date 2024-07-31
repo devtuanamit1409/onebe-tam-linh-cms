@@ -1538,6 +1538,58 @@ export interface ApiHomeHome extends Schema.SingleType {
   };
 }
 
+export interface ApiHotlineHotline extends Schema.SingleType {
+  collectionName: 'hotlines';
+  info: {
+    singularName: 'hotline';
+    pluralName: 'hotlines';
+    displayName: 'Hotline';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    zalo: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hotline.hotline',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hotline.hotline',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::hotline.hotline',
+      'oneToMany',
+      'api::hotline.hotline'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSanPhamSanPham extends Schema.SingleType {
   collectionName: 'san_phams';
   info: {
@@ -1707,6 +1759,7 @@ declare module '@strapi/types' {
       'api::footer.footer': ApiFooterFooter;
       'api::goc-chuyen-gia.goc-chuyen-gia': ApiGocChuyenGiaGocChuyenGia;
       'api::home.home': ApiHomeHome;
+      'api::hotline.hotline': ApiHotlineHotline;
       'api::san-pham.san-pham': ApiSanPhamSanPham;
       'api::thong-tu-nghi-dinh.thong-tu-nghi-dinh': ApiThongTuNghiDinhThongTuNghiDinh;
       'api::ve-chung-toi.ve-chung-toi': ApiVeChungToiVeChungToi;
