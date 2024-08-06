@@ -23,9 +23,9 @@ module.exports = ({ env }) => ({
             "nonbreaking bullist numlist outdent indent | removeformat | help",
           fontsize_formats: "8px 10px 12px 14px 16px 18px 24px 36px",
           formats: {
-            bold: { inline: "strong" }, // sử dụng thẻ strong thay vì span
-            italic: { inline: "em" }, // sử dụng thẻ em thay vì span
-            underline: { inline: "u" }, // sử dụng thẻ u thay vì span
+            bold: { inline: "strong" },
+            italic: { inline: "em" },
+            underline: { inline: "u" },
             fontSize: {
               inline: "span",
               styles: { "font-size": "%value" },
