@@ -85,6 +85,27 @@
         "Tin tức",
         "Góc chuyên gia"
       ]
+    },
+    "test": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "slug_current": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

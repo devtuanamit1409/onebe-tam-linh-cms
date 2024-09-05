@@ -13,6 +13,7 @@
     "start": "strapi start"
   },
   "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.13",
     "@sklinet/strapi-plugin-tinymce": "^1.0.9",
     "@strapi/plugin-cloud": "4.24.5",
     "@strapi/plugin-color-picker": "^4.25.4",
