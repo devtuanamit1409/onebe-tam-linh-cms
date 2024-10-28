@@ -895,20 +895,16 @@ export interface ApiBaiVietBaiViet extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    test: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'light';
-        }
-      > &
+    slug_current: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    slug_current: Attribute.String &
+    category_details: Attribute.Component<
+      'component.category-detail-list',
+      true
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

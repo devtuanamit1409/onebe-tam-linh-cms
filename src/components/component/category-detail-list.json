@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_category_detail_lists",
+  "info": {
+    "displayName": "category_detail_list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "childrens": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.category-detail"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
