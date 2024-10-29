@@ -62,6 +62,38 @@ export interface ComponentBanner extends Schema.Component {
   };
 }
 
+export interface ComponentCategoryDetailList extends Schema.Component {
+  collectionName: 'components_component_category_detail_lists';
+  info: {
+    displayName: 'category_detail_list';
+    description: '';
+  };
+  attributes: {
+    childrens: Attribute.Component<'component.category-detail', true>;
+    title: Attribute.String;
+    slug: Attribute.String;
+  };
+}
+
+export interface ComponentCategoryDetail extends Schema.Component {
+  collectionName: 'components_component_category_details';
+  info: {
+    displayName: 'Category Detail';
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.String;
+  };
+}
+
+export interface ComponentChildren extends Schema.Component {
+  collectionName: 'components_component_children';
+  info: {
+    displayName: 'children';
+  };
+  attributes: {};
+}
+
 export interface ComponentLink extends Schema.Component {
   collectionName: 'components_component_links';
   info: {
@@ -291,6 +323,9 @@ declare module '@strapi/types' {
       'about.list-about': AboutListAbout;
       'component.banner-detail': ComponentBannerDetail;
       'component.banner': ComponentBanner;
+      'component.category-detail-list': ComponentCategoryDetailList;
+      'component.category-detail': ComponentCategoryDetail;
+      'component.children': ComponentChildren;
       'component.link': ComponentLink;
       'component.seo': ComponentSeo;
       'component.slug': ComponentSlug;

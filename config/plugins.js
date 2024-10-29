@@ -20,7 +20,7 @@ module.exports = ({ env }) => ({
             "undo redo | styles | bold italic forecolor backcolor fontsizeinput  | " +
             "alignleft aligncenter alignright alignjustify | " +
             "media table emoticons visualblocks code | " +
-            "nonbreaking bullist numlist outdent indent | removeformat | help",
+            "nonbreaking bullist numlist outdent indent | removeformat | help | anchor | addId",
           fontsize_formats: "8px 10px 12px 14px 16px 18px 24px 36px",
           formats: {
             bold: { inline: "strong" },
@@ -52,6 +52,23 @@ module.exports = ({ env }) => ({
               ],
             },
           ],
+          setup: function (editor) {
+            editor.ui.registry.addButton("addId", {
+              text: "Gán ID",
+              onAction: function () {
+                editor.insertContent(
+                  '<span id="custom_id">Văn bản có ID</span>'
+                );
+              },
+            });
+            editor.ui.registry.addContextToolbar("textselection", {
+              predicate: function (node) {
+                return !node.id;
+              },
+              items: "addId",
+              scope: "node",
+            });
+          },
         },
       },
     },
