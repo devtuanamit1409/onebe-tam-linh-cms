@@ -4,7 +4,8 @@
   "info": {
     "singularName": "thong-tu-nghi-dinh",
     "pluralName": "thong-tu-nghi-dinhs",
-    "displayName": "Thông tư nghị định"
+    "displayName": "Thông tư nghị định",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
