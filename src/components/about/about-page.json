@@ -20,6 +20,9 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "top_content": {
+      "type": "text"
     }
   }
 }

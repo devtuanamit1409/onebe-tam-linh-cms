@@ -63,6 +63,14 @@
       },
       "type": "string",
       "required": true
+    },
+    "top_content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

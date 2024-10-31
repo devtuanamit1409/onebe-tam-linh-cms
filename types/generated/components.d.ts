@@ -12,6 +12,7 @@ export interface AboutAboutPage extends Schema.Component {
     name: Attribute.String;
     description: Attribute.Text;
     content: Attribute.RichText;
+    top_content: Attribute.Text;
   };
 }
 
@@ -145,6 +146,7 @@ export interface ComponentSubPage extends Schema.Component {
     banner: Attribute.Component<'component.banner'>;
     name: Attribute.String & Attribute.Required;
     description: Attribute.Text;
+    top_content: Attribute.Text;
   };
 }
 

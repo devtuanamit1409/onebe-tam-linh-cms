@@ -54,6 +54,14 @@
         }
       },
       "component": "home.item-thanh-vien"
+    },
+    "top_content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }
