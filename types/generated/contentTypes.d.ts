@@ -1316,6 +1316,12 @@ export interface ApiDanhMucConDanhMucCon extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    top_content: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
