@@ -104,6 +104,14 @@
         }
       },
       "component": "component.category-detail-list"
+    },
+    "top_content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "du-an",
     "pluralName": "du-ans",
-    "displayName": "Dự án"
+    "displayName": "Dự án",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
