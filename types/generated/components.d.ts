@@ -70,9 +70,9 @@ export interface ComponentCategoryDetailList extends Schema.Component {
     description: '';
   };
   attributes: {
-    childrens: Attribute.Component<'component.category-detail', true>;
     title: Attribute.String;
     slug: Attribute.String;
+    childrens: Attribute.Component<'component.category-detail', true>;
   };
 }
 
