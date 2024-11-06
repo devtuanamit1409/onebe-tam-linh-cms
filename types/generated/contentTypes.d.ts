@@ -1058,12 +1058,6 @@ export interface ApiBaiVietBaiViet extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    content: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     bai_viet_tieu_diem: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1103,6 +1097,19 @@ export interface ApiBaiVietBaiViet extends Schema.CollectionType {
         };
       }>;
     top_content: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

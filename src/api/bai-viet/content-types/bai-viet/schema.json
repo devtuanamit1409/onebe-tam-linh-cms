@@ -47,14 +47,6 @@
       "unique": true,
       "required": false
     },
-    "content": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext"
-    },
     "bai_viet_tieu_diem": {
       "pluginOptions": {
         "i18n": {
@@ -112,6 +104,19 @@
         }
       },
       "type": "text"
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
