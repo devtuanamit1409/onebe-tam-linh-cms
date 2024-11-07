@@ -32,7 +32,7 @@ module.exports = createCoreController(
         const danhMucConsQuery = strapi.db
           .query("api::danh-muc-con.danh-muc-con")
           .findMany({
-            where: { category: "Sản phẩm", locale },
+            where: { category: "Triết lý", locale },
             limit: limitDanhMuc !== -1 ? parseInt(limitDanhMuc, 10) : undefined,
           });
 
@@ -79,7 +79,7 @@ module.exports = createCoreController(
             };
           }),
         };
-
+        console.log("Response Data:", response);
         return ctx.send(response);
       } catch (err) {
         console.error("Error fetching san pham:", err); // In ra chi tiết lỗi

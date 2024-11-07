@@ -4,7 +4,7 @@
   "info": {
     "singularName": "thong-tu-nghi-dinh",
     "pluralName": "thong-tu-nghi-dinhs",
-    "displayName": "Thông tư nghị định",
+    "displayName": "Ủng hộ",
     "description": ""
   },
   "options": {
@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "main": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -24,7 +24,20 @@
           "localized": true
         }
       },
-      "component": "component.sub-page"
+      "component": "component.seo"
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

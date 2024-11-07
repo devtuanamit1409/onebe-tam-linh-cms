@@ -1075,7 +1075,9 @@ export interface ApiBaiVietBaiViet extends Schema.CollectionType {
       'oneToMany',
       'api::danh-muc-con.danh-muc-con'
     >;
-    type: Attribute.Enumeration<['Tin t\u1EE9c', 'G\u00F3c chuy\u00EAn gia']> &
+    type: Attribute.Enumeration<
+      ['S\u00E1ch', 'Th\u00F4ng tin quan tr\u1ECDng']
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1308,7 +1310,7 @@ export interface ApiDanhMucConDanhMucCon extends Schema.CollectionType {
         'D\u1ECBch v\u1EE5',
         '\u0110\u1ED1i t\u00E1c',
         'D\u1EF1 \u00E1n',
-        'S\u1EA3n ph\u1EA9m',
+        'Tri\u1EBFt l\u00FD',
         'Th\u00F4ng t\u01B0 ngh\u1ECB \u0111\u1ECBnh'
       ]
     > &
@@ -1620,7 +1622,7 @@ export interface ApiGocChuyenGiaGocChuyenGia extends Schema.SingleType {
   info: {
     singularName: 'goc-chuyen-gia';
     pluralName: 'goc-chuyen-gias';
-    displayName: 'G\u00F3c chuy\u00EAn gia';
+    displayName: 'Th\u00F4ng tin quan tr\u1ECDng';
     description: '';
   };
   options: {
@@ -1846,7 +1848,7 @@ export interface ApiSanPhamSanPham extends Schema.SingleType {
   info: {
     singularName: 'san-pham';
     pluralName: 'san-phams';
-    displayName: 'S\u1EA3n ph\u1EA9m';
+    displayName: 'Tri\u1EBFt L\u00FD';
     description: '';
   };
   options: {
@@ -1893,7 +1895,7 @@ export interface ApiThongTuNghiDinhThongTuNghiDinh extends Schema.SingleType {
   info: {
     singularName: 'thong-tu-nghi-dinh';
     pluralName: 'thong-tu-nghi-dinhs';
-    displayName: 'Th\u00F4ng t\u01B0 ngh\u1ECB \u0111\u1ECBnh';
+    displayName: '\u1EE6ng h\u1ED9';
     description: '';
   };
   options: {
@@ -1905,7 +1907,20 @@ export interface ApiThongTuNghiDinhThongTuNghiDinh extends Schema.SingleType {
     };
   };
   attributes: {
-    main: Attribute.Component<'component.sub-page'> &
+    seo: Attribute.Component<'component.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'light';
+        }
+      > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

@@ -74,8 +74,8 @@
       },
       "type": "enumeration",
       "enum": [
-        "Tin tức",
-        "Góc chuyên gia"
+        "Sách",
+        "Thông tin quan trọng"
       ]
     },
     "slug_current": {
