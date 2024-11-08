@@ -1717,16 +1717,9 @@ export interface ApiHomeHome extends Schema.SingleType {
     banner: Attribute.Component<'home.banner-home', true> &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
-      }> &
-      Attribute.SetMinMax<
-        {
-          min: 3;
-          max: 3;
-        },
-        number
-      >;
+      }>;
     gioiThieu: Attribute.Component<'home.section-gioi-thieu'> &
       Attribute.SetPluginOptions<{
         i18n: {
