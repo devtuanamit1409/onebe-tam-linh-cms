@@ -1146,7 +1146,7 @@ export interface ApiCongTyThanhVienCongTyThanhVien extends Schema.SingleType {
   info: {
     singularName: 'cong-ty-thanh-vien';
     pluralName: 'cong-ty-thanh-viens';
-    displayName: 'C\u00F4ng ty th\u00E0nh vi\u00EAn';
+    displayName: 'Th\u00F4ng tin \u0111\u00E0o t\u1EA1o';
     description: '';
   };
   options: {
@@ -1763,6 +1763,12 @@ export interface ApiHomeHome extends Schema.SingleType {
         };
       }>;
     top_content: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imageDocument: Attribute.Component<'component.banner'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
