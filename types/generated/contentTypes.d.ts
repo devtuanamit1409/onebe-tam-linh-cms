@@ -1331,6 +1331,11 @@ export interface ApiDanhMucConDanhMucCon extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    list_mega_menu: Attribute.Relation<
+      'api::danh-muc-con.danh-muc-con',
+      'oneToMany',
+      'api::bai-viet.bai-viet'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

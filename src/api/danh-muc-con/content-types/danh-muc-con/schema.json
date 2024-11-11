@@ -83,6 +83,11 @@
         }
       },
       "type": "text"
+    },
+    "list_mega_menu": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bai-viet.bai-viet"
     }
   }
 }
